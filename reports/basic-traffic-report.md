@@ -1,38 +1,23 @@
-# HTTP Traffic Analysis Report
+# Network Traffic Analysis Report – Host PC HTTP Capture
 
 ## Overview
-This report analyzes two captured packets (Frames 846 and 894) from a Wireshark capture performed **on the host PC** while visiting a website over HTTP.  
-The objective is to determine whether the communication was encrypted or sent in plaintext.  
-A similar test will be conducted later in a virtual machine (VM) environment for comparison.
+This report documents an HTTP packet capture conducted on the host PC while visiting a website over **port 80** (unencrypted HTTP). The purpose was to examine the visibility of unencrypted web traffic.
 
-## Packet Details
+## Observations
+- **Packet Count:** Frame 846 and Frame 894 captured.
+- **Protocols Detected:** Ethernet II → IPv4 → TCP → HTTP.
+- **Source/Destination Details:**
+  - **Frame 846:** Src 10.0.0.245 → Dst 44.228.249.3.
+  - **Frame 894:** Src 44.228.249.3 → Dst 10.0.0.245.
+- **Vulnerability Identified:** HTTP traffic is transmitted in cleartext, making it susceptible to interception, eavesdropping, and manipulation.
+- **Data Visibility:** HTTP headers and potentially sensitive data could be inspected without encryption.
 
-### Frame 846 (HTTP Request)
-- **Source IP:** 10.0.0.245
-- **Destination IP:** 44.228.249.3
-- **Protocol:** HTTP
-- **Port:** TCP 80 (default HTTP port)
-- **Details:** The request contains a visible `GET / HTTP/1.1` line along with headers such as:
-  - `Host: testphp.vulnweb.com`
-  - `User-Agent`
-  - `Accept`
-- **Observation:** All request headers and method are human-readable, indicating plaintext transmission.
+## Mitigation Recommendations
+- **Use HTTPS:** Encrypt web traffic with TLS to prevent interception.
+- **Network Scanning:** Use tools like `Nmap` to identify open ports and services, ensuring HTTP is replaced with HTTPS where possible.
+- **Network Monitoring:** Deploy IDS/IPS systems such as Snort or Suricata to detect unencrypted traffic patterns.
 
-### Frame 894 (HTTP Response)
-- **Source IP:** 44.228.249.3
-- **Destination IP:** 10.0.0.245
-- **Protocol:** HTTP
-- **Port:** TCP 80
-- **Details:** The response contains a visible status line `HTTP/1.1 200 OK` and HTML webpage content in plaintext.
-- **Observation:** The response body and headers are visible without decryption.
-
-## Indicators of Unencrypted Traffic
-1. **Protocol is HTTP, not HTTPS** – Wireshark labels the traffic as HTTP. Encrypted traffic would show as TLSv1.2/TLSv1.3.
-2. **Uses TCP Port 80** – This is the default port for plaintext HTTP, while HTTPS typically uses port 443.
-3. **Plaintext Data** – Both request and response content are fully readable without any decoding.
-4. **No TLS Handshake** – The packet sequence shows no TLS negotiation (ClientHello/ServerHello) before HTTP communication.
-
-## Conclusion
-The captured packets show a plaintext HTTP exchange between the client and server. Since the data is unencrypted, an attacker with access to the network could read both the request and response contents.
-
-**Note:** This capture was done on the host PC while accessing an HTTP website. A follow-up test will be performed on a virtual machine to compare results.
+## Lessons Learned
+- Unencrypted HTTP exposes communication contents to anyone with network access.
+- Even basic browsing over port 80 poses security risks.
+- Future captures should prioritize testing secure protocols to compare encryption effectiveness.
