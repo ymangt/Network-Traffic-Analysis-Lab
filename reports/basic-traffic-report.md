@@ -1,7 +1,9 @@
 # HTTP Traffic Analysis Report
 
 ## Overview
-This report analyzes two captured packets (Frames 846 and 894) from a Wireshark capture. The objective is to determine whether the communication was encrypted or sent in plaintext.
+This report analyzes two captured packets (Frames 846 and 894) from a Wireshark capture performed **on the host PC** while visiting a website over HTTP.  
+The objective is to determine whether the communication was encrypted or sent in plaintext.  
+A similar test will be conducted later in a virtual machine (VM) environment for comparison.
 
 ## Packet Details
 
@@ -32,3 +34,5 @@ This report analyzes two captured packets (Frames 846 and 894) from a Wireshark 
 
 ## Conclusion
 The captured packets show a plaintext HTTP exchange between the client and server. Since the data is unencrypted, an attacker with access to the network could read both the request and response contents.
+
+**Note:** This capture was done on the host PC while accessing an HTTP website. A follow-up test will be performed on a virtual machine to compare results.
