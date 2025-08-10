@@ -1,41 +1,22 @@
-# Apache HTTP Traffic Capture Report (VM)
+# Network Traffic Analysis Report – VM Apache HTTP Capture
 
-## Capture Environment
-- **System**: Virtual Machine (VM)
-- **Purpose**: Capture of HTTP traffic when accessing a site running Apache or responding with HTTP traffic
-- **Network Interface**: VMware virtual adapter
-- **Capture Tool**: Wireshark
+## Overview
+This report documents HTTP traffic captured on a virtual machine when accessing `http://connectivity-check.ubuntu.com` over **port 80**. The capture demonstrates the risks of unencrypted traffic transmission.
 
 ## Observations
+- **Packet Count:** Captured a request (Frame 6) and corresponding response (Frame 8).
+- **Protocols Detected:** Ethernet II → IPv4 → TCP → HTTP.
+- **Request:** HTTP GET `/` to `connectivity-check.ubuntu.com` (Port 80).
+- **Response:** HTTP/1.1 204 No Content from an Apache server running on Ubuntu.
+- **Vulnerability Identified:** HTTP request and response transmitted in cleartext, allowing full inspection of headers and server response.
+- **Data Visibility:** Host header, HTTP method, and server banner are visible in plaintext.
 
-### Frame: HTTP GET Request
-- **Source IP**: 192.168.71.131 (VM)
-- **Destination IP**: 91.189.91.49 (connectivity-check.ubuntu.com)
-- **Source Port**: 43872
-- **Destination Port**: 80 (HTTP)
-- **HTTP Method**: GET
-- **HTTP Version**: 1.1
-- **Host Header**: connectivity-check.ubuntu.com
-- **Additional Headers**:
-  - Accept: */*
-  - Connection: close
+## Mitigation Recommendations
+- **Migrate to HTTPS:** Implement TLS certificates (e.g., Let’s Encrypt) to encrypt communication.
+- **Port and Service Review:** Perform periodic scanning with `Nmap` to detect services running on insecure ports.
+- **Web Server Hardening:** Disable unnecessary headers, update Apache regularly, and enforce HTTPS-only connections.
 
-### Frame: HTTP 204 Response
-- **Source IP**: 91.189.91.49
-- **Destination IP**: 192.168.71.131
-- **Status Code**: 204 No Content
-- **Server**: nginx/1.14.0 (Ubuntu)
-- **Date**: Sat, 09 Aug 2025 19:08:47 GMT
-- **Headers**:
-  - x-cache-status: from content-cache-lss/lr
-  - x-networkmanager-status: online
-
-## Key Points
-- The traffic was **unencrypted HTTP**, meaning all headers and content could be read in plain text.
-- The captured traffic demonstrates a full request/response cycle:
-  1. The VM sent an HTTP GET request to `connectivity-check.ubuntu.com`.
-  2. The server responded with `HTTP/1.1 204 No Content`.
-- This confirms HTTP traffic can be easily inspected and intercepted when not using HTTPS.
-
-## Conclusion
-This capture from the VM environment successfully shows unencrypted HTTP communication between the client and the server. It will serve as a comparison against future HTTPS or secure protocol captures.
+## Lessons Learned
+- VM captures confirm that unencrypted HTTP traffic is equally vulnerable as on a physical host.
+- Even non-sensitive HTTP requests reveal server information and infrastructure details.
+- Securing server communication with TLS is critical, regardless of the deployment environment.
