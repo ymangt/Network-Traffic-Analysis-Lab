@@ -1,7 +1,7 @@
 # Network Traffic Analysis Report – VM Apache HTTP Capture
 
 ## Overview
-This report documents HTTP traffic captured on the Test-Machine VM while accessing http://connectivity-check.ubuntu.com over port 80. The objective was to evaluate unencrypted traffic risks in a virtualized environment.
+This report documents HTTP traffic captured on the Test-Machine VM while accessing http://192.168.71.131 (VMs IP address) over port 80. The objective was to evaluate unencrypted traffic risks in a virtualized environment.
 
 ## Observations
 - **Packet Count**: Captured 2 packets (request and response).
