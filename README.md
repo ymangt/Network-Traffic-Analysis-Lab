@@ -205,7 +205,7 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 ## Screenshots
 
 **Basic HTTP Capture**  
-[Basic GET HTTP Capture](../screenshots/http-get-screenshot.png)  
+[Basic GET HTTP Capture](/screenshots/http-get-screenshot.png)  
 [Basic RESPONSE HTTP Capture](../screenshots/http-response-screenshot.png)  
   
 **Apache HTTP Capture**  
