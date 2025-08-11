@@ -202,36 +202,22 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 
 ## Screenshots
 
-**Apache HTTP Capture**
+**Apache HTTP Capture**  
+[Apache 204 Screenshot](../screenshots/apache-204-screenshot.png)  
+[Apache GET Screenshot](../screenshots/apache-get-screenshot.png)  
 
-```bash
-screenshots/apache-204-screenshot.png
-screenshots/apache-get-screenshot.png
-```
+**ICMPv6 Port Scan**  
+[ICMPv6 Port Scan Screenshot](../screenshots/port-scan-ICMP-packets-screenshot.png)  
 
-**ICMPv6 Port Scan**
+**XSS Simulation**  
+[XSS Simulation Screenshot](../screenshots/XSS-simulated-attack-screenshot.png)  
 
-```bash
-screenshots/port-scan-ICMP-packets-screenshot.png
-```
+**SYN Flood Simulation**  
+[SYN Flood Screenshot](../screenshots/SYN-flood-simulated-attack-screenshot.png)  
 
-**XSS Simulation**
+**FTP Credential Capture**  
+[FTP Credential Capture Screenshot](../screenshots/FTP-credential-capture-screenshot.png)
 
-```bash
-screenshots/XSS-simulated-attack-screenshot.png
-```
-
-**SYN Flood Simulation**
-
-```bash
-screenshots/SYN-flood-simulated-attack-screenshot.png
-```
-
-**FTP Credential Capture**
-
-```bash
-screenshots/FTP-credential-capture-screenshot.png
-```
 
 **Tip:** In GitHub, images render with `![Alt text](path/to/file.png)` if you want to embed them inline.
 
