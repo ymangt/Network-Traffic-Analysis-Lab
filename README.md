@@ -39,6 +39,8 @@ A hands-on, portfolio-ready lab that captures and analyzes normal traffic and si
 
 ```text
 /screenshots/                    # PNG evidence used in README & reports
+  http-get-screenshot.png
+  http-response-screenshot.png
   apache-204-screenshot.png
   apache-get-screenshot.png
   port-scan-ICMP-packets-screenshot.png
@@ -202,8 +204,12 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 
 ## Screenshots
 
+**Basic HTTP Capture**  
+[Basic GET HTTP Capture](../screenshots/http-get-screenshot.png)  
+[Basic RESPONSE HTTP Capture](../screenshots/http-response-screenshot.png)  
+  
 **Apache HTTP Capture**  
-[Apache 204 Screenshot](../screenshots/apache-204-screenshot.png)  
+[Apache RESPONSE Screenshot](../screenshots/apache-204-screenshot.png)  
 [Apache GET Screenshot](../screenshots/apache-get-screenshot.png)  
 
 **ICMPv6 Port Scan**  
