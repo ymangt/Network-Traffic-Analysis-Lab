@@ -206,23 +206,23 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 
 **Basic HTTP Capture**  
 [Basic GET HTTP Capture](/screenshots/http-get-screenshot.png)  
-[Basic RESPONSE HTTP Capture](../screenshots/http-response-screenshot.png)  
+[Basic RESPONSE HTTP Capture](/screenshots/http-response-screenshot.png)  
   
 **Apache HTTP Capture**  
-[Apache RESPONSE Screenshot](../screenshots/apache-204-screenshot.png)  
-[Apache GET Screenshot](../screenshots/apache-get-screenshot.png)  
+[Apache RESPONSE Screenshot](/screenshots/apache-204-screenshot.png)  
+[Apache GET Screenshot](/screenshots/apache-get-screenshot.png)  
 
 **ICMPv6 Port Scan**  
-[ICMPv6 Port Scan Screenshot](../screenshots/port-scan-ICMP-packets-screenshot.png)  
+[ICMPv6 Port Scan Screenshot](/screenshots/port-scan-ICMP-packets-screenshot.png)  
 
 **XSS Simulation**  
-[XSS Simulation Screenshot](../screenshots/XSS-simulated-attack-screenshot.png)  
+[XSS Simulation Screenshot](/screenshots/XSS-simulated-attack-screenshot.png)  
 
 **SYN Flood Simulation**  
-[SYN Flood Screenshot](../screenshots/SYN-flood-simulated-attack-screenshot.png)  
+[SYN Flood Screenshot](/screenshots/SYN-flood-simulated-attack-screenshot.png)  
 
 **FTP Credential Capture**  
-[FTP Credential Capture Screenshot](../screenshots/FTP-credential-capture-screenshot.png)
+[FTP Credential Capture Screenshot](/screenshots/FTP-credential-capture-screenshot.png)
 
 
 **Tip:** In GitHub, images render with `![Alt text](path/to/file.png)` if you want to embed them inline.
