@@ -11,6 +11,8 @@ This report documents an HTTP packet capture conducted on the **host PC** while 
   - **Frame 894 (200 OK Response):** Src 44.228.249.3 → Dst 10.0.0.245, `HTTP/1.1 200 OK`.
 - **Vulnerability Identified:** HTTP traffic was transmitted in cleartext, making it susceptible to interception, eavesdropping, and manipulation.
 - **Data Visibility:** Request and response headers (e.g., `Host: testphp.vulnweb.com`) and potential form data were fully readable without decryption.
+- [Apache GET HTTP Capture](../screenshots/apache-get-screenshot.png)
+- [Apache RESPONSE HTTP Capture](../screenshots/apache-204-screenshot.png)
 
 ## Security Risks
 - **Unencrypted Transmission:** All HTTP data could be intercepted by any party with network access.
@@ -28,3 +30,4 @@ This report documents an HTTP packet capture conducted on the **host PC** while 
 
 ## Conclusion
 The capture confirms that HTTP traffic over port 80 is unencrypted, posing significant risks of data exposure. This baseline analysis on the host PC will serve as a reference point for subsequent VM-based captures and advanced threat simulations.
+
