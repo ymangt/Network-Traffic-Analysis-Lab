@@ -17,6 +17,7 @@ A hands-on, portfolio-ready lab that captures and analyzes normal traffic and si
 - [Wireshark Filters Cheat Sheet](#wireshark-filters-cheat-sheet)
 - [Threat Impact Summary](#threat-impact-summary)
 - [Mitigation Recommendations](#mitigation-recommendations)
+- [MITRE ATT&CK Mapping](#MITRE-ATT&CK-Mapping)
 - [Screenshots](#screenshots)
 - [Reports](#reports)
 - [Notes & Safety](#notes--safety)
@@ -190,6 +191,19 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 | Reflected XSS (HTTP) | High | High | High | Session hijacking, data theft |
 | SYN Flood (DDoS) | High | High | High | Service outage, denial of access |
 | FTP Cleartext Credentials | High | High | High | Account compromise, lateral movement, data leak |
+
+## MITRE ATT&CK Mapping
+
+> Approximate mappings to ATT&CK Enterprise techniques for the simulated scenarios.
+
+| Scenario                     | Tactic             | Technique (ID)                                  |
+|-----------------------------|--------------------|-------------------------------------------------|
+| Port Scan (ICMPv6 noise)    | Reconnaissance     | Active Scanning (T1595)                         |
+| SYN Flood (DDoS)            | Impact             | Network Denial of Service (T1498) / Direct Network Flood (T1498.001) |
+| FTP Credentials (cleartext) | Credential Access  | Network Sniffing (T1040)                        |
+| Reflected XSS               | Initial Access / Execution | Drive-by Compromise (T1189); Command and Scripting Interpreter: JavaScript (T1059.007) |
+
+*Note:* “Unencrypted HTTP” is primarily an **exposure** that enables techniques like **Network Sniffing (T1040)** rather than a distinct ATT&CK technique by itself.
 
 ## Mitigation Recommendations
 
