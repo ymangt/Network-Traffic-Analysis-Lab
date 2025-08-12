@@ -17,7 +17,7 @@ A hands-on, portfolio-ready lab that captures and analyzes normal traffic and si
 - [Wireshark Filters Cheat Sheet](#wireshark-filters-cheat-sheet)
 - [Threat Impact Summary](#threat-impact-summary)
 - [Mitigation Recommendations](#mitigation-recommendations)
-- [MITRE ATT&CK Mapping](#mitre-attack-mapping)
+- [MITRE ATT&CK Mapping](#mitre-att&ck-mapping)
 - [Screenshots](#screenshots)
 - [Reports](#reports)
 - [Notes & Safety](#notes--safety)
