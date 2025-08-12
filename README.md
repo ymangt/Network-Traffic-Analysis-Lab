@@ -17,7 +17,7 @@ A hands-on, portfolio-ready lab that captures and analyzes normal traffic and si
 - [Wireshark Filters Cheat Sheet](#wireshark-filters-cheat-sheet)
 - [Threat Impact Summary](#threat-impact-summary)
 - [Mitigation Recommendations](#mitigation-recommendations)
-- [MITRE ATT&CK Mapping](#mitre-att&ck-mapping)
+- [MITRE ATT&CK Mapping](#mitre-attack-mapping)
 - [Screenshots](#screenshots)
 - [Reports](#reports)
 - [Notes & Safety](#notes--safety)
@@ -192,7 +192,7 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 | SYN Flood (DDoS) | High | High | High | Service outage, denial of access |
 | FTP Cleartext Credentials | High | High | High | Account compromise, lateral movement, data leak |
 
-## MITRE ATT&CK Mapping
+## MITRE ATTACK Mapping
 
 > Approximate mappings to ATT&CK Enterprise techniques for the simulated scenarios.
 
