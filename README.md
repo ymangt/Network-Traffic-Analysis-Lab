@@ -192,7 +192,7 @@ ftp.request.command == "USER" || ftp.request.command == "PASS"
 | SYN Flood (DDoS) | High | High | High | Service outage, denial of access |
 | FTP Cleartext Credentials | High | High | High | Account compromise, lateral movement, data leak |
 
-## MITRE ATTACK Mapping
+## MITRE ATT&CK Mapping
 
 > Approximate mappings to ATT&CK Enterprise techniques for the simulated scenarios.
 
